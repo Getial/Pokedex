@@ -1,5 +1,5 @@
 export const user = {
-  userName: "bfGetial",
+  username: "bfGetial",
   password: "123456"
 }
 
