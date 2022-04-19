@@ -6,13 +6,9 @@ import UserData from '../components/Auth/UserData';
 import useAuth from '../hooks/useAuth';
 
 const Account = () => {
-  const {auth} = useAuth();
+  const { auth } = useAuth();
 
-  return (
-    <SafeAreaView>
-      {auth ? <UserData /> : <LoginForm />}
-    </SafeAreaView>
-  );
+  return <SafeAreaView>{auth ? <UserData /> : <LoginForm />}</SafeAreaView>;
 };
 
 export default Account;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import useAuth from '../../hooks/useAuth'
+import useAuth from '../../hooks/useAuth';
 
 export default function UserData() {
   const { auth, logout } = useAuth();
@@ -8,61 +8,62 @@ export default function UserData() {
     <View style={styles.content}>
       <View style={styles.titleBlock}>
         <Text style={styles.title}>Bienvenido,</Text>
-        <Text style={styles.title}>
-          {`${auth.firstName} ${auth.lastName}`}
-        </Text>
+        <Text style={styles.title}>{`${auth.firstName} ${auth.lastName}`}</Text>
       </View>
 
       <View style={styles.dataContent}>
-        <ItemMenu title="Nombre: " text={`${auth.firstName} ${auth.lastName}`} />
+        <ItemMenu
+          title="Nombre: "
+          text={`${auth.firstName} ${auth.lastName}`}
+        />
         <ItemMenu title="UserName: " text={auth.username} />
         <ItemMenu title="Email: " text={auth.email} />
         <ItemMenu title="Total Favoritos: " text={`0 pokemons`} />
       </View>
 
-      <Button title='Desconectarse' onPress={logout} style={styles.btnLogout} />
+      <Button title="Desconectarse" onPress={logout} style={styles.btnLogout} />
     </View>
-  )
+  );
 }
 
 function ItemMenu(props) {
   const { title, text } = props;
 
-  return(
+  return (
     <View style={styles.itemMenu}>
       <Text style={styles.itemMenuTitle}>{title}</Text>
       <Text>{text}</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   content: {
     marginHorizontal: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   titleBlock: {
-    marginBottom: 30
+    marginBottom: 30,
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 22
+    fontSize: 22,
   },
   dataContent: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   itemMenu: {
     flexDirection: 'row',
     paddingVertical: 20,
     borderBottomWidth: 1,
-    borderColor: "#cfcfcf"
+    borderColor: '#cfcfcf',
   },
   itemMenuTitle: {
     fontWeight: 'bold',
     paddingRight: 10,
-    width: 120
+    width: 120,
   },
   btnLogout: {
-    paddingTop: 20
-  }
-})
+    paddingTop: 20,
+  },
+});
