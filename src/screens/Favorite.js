@@ -6,6 +6,7 @@ import { getPokemonsFavoriteApi } from '../api/favorite';
 import { getPokemonDetailsApi } from '../api/pokemon';
 import useAuth from '../hooks/useAuth';
 import PokemonList from '../components/PokemonList';
+import NOLogged from '../components/NOLogged';
 
 const Favorite = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -39,7 +40,7 @@ const Favorite = () => {
 
   return !auth ? (
     <SafeAreaView>
-      <Text>Usuario no logeado</Text>
+      <NOLogged />
     </SafeAreaView>
   ) : (
     <SafeAreaView>
